@@ -7,7 +7,7 @@ const Home = () => {
       <div className = "text-center">
         <h1 className = "text-3xl lg:text-6xl font-bold mb-5">Welcome to The Market Place</h1>
         <p className = "text-xl lg:text-4xl mb-5">Your one stop for everything you need</p>
-        <button className = "bg-[#C2DEDC] transition-all ease-in-out delay-150 text-white font-bold lg:text-2xl px-6 py-3 lg:px-16 lg:py-6 rounded-lg duration-300 hover:text-[#1BA9B5] hover:scale-x-125">
+        <button className = "bg-[#C2DEDC] transition-all ease-in-out delay-100 text-white font-bold lg:text-2xl px-6 py-3 lg:px-16 lg:py-6 rounded-lg duration-300 hover:text-[#1BA9B5] hover:scale-125">
           <Link to = "/shop" className='cursor-pointer'>Shop now</Link>
         </button>
       </div>
