@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Link } from 'react-router-dom'
 import {ReactComponent as MenuOpenIcon} from "../assets/svg/menuOpen.svg";
 import {ReactComponent as MenuCloseIcon} from "../assets/svg/menuClose.svg";
+import { useSelector } from "react-redux";
 
 
 const Navbar = () => {
+  const { numberOfItemsInCart } = useSelector((state) => state.shop)
   const [navbar, setNavbar] = useState(false);
   const navTexts = ["Home","Shop","Cart","Contact"]
   return (
@@ -17,7 +19,7 @@ const Navbar = () => {
           <div className='flex flex-col gap-12 md:flex-row lg:text-2xl'>
             <Link to = "/" className='transition-all ease-in-out delay-150 duration-300 hover:text-[#1971e4] hover:tracking-widest cursor-pointer'>{navTexts[0]}</Link>
             <Link to = "/shop" className='transition-all ease-in-out delay-150 duration-300 hover:text-[#1971e4] hover:tracking-widest cursor-pointer'>{navTexts[1]}</Link>
-            <Link to = "/cart" className='transition-all ease-in-out delay-150 duration-300 hover:text-[#1971e4] hover:tracking-widest cursor-pointer'>{navTexts[2]}</Link>
+            <Link to = "/cart" className='transition-all ease-in-out delay-150 duration-300 hover:text-[#1971e4] hover:tracking-widest cursor-pointer'>{navTexts[2]} ({numberOfItemsInCart})</Link>
             <Link to = "/contact" className='transition-all ease-in-out delay-150 duration-300 hover:text-[#1971e4] hover:tracking-widest cursor-pointer'>{navTexts[3]}</Link>              
           </div>
         </div>
@@ -31,7 +33,7 @@ const Navbar = () => {
           <div className='flex flex-col items-center gap-5'>
             <Link to = "/" className='hover:text-[#1971e4] cursor-pointer'>{navTexts[0]}</Link>
             <Link to = "/shop" className='hover:text-[#1971e4] cursor-pointer'>{navTexts[1]}</Link>
-            <Link to = "/cart" className='hover:text-[#1971e4] cursor-pointer'>{navTexts[2]}</Link>
+            <Link to = "/cart" className='hover:text-[#1971e4] cursor-pointer'>{navTexts[2]} ({numberOfItemsInCart})</Link>
             <Link to = "/contact" className='hover:text-[#1971e4] cursor-pointer'>{navTexts[3]}</Link>
           </div>
       </div>

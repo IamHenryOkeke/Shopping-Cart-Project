@@ -8,7 +8,7 @@ const Filter = () => {
   
   return (
     <div className="flex gap-5 items-center mb-5">
-        <p className='text-xl'>Filter:</p>
+        <p className='text-xl'>Category:</p>
         <select className='bg-[#546b56] text-white font-semibold pl-2 py-1 rounded' onChange={(e) => {
           dispatch(filterItems(e.target.value))
         }}>
