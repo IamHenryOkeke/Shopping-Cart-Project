@@ -30,7 +30,6 @@ const Cart = () => {
               <CartItems key={item.id} {...item}/>
             ))}
       </div>
-
       <div className="flex justify-between lg:justify-center gap-8 mt-5 text-xl lg:text-3xl">
         <p>
           Total:
