@@ -8,7 +8,8 @@ const initialState = {
   shopItems : [],
   cartItems : [],
   numberOfItemsInCart : 0,
-  total : 0
+  total : 0,
+  itemStatus : false
 }
 
 const url = "https://fakestoreapi.com/products";
@@ -62,6 +63,7 @@ export const shopSlice = createSlice({
         })
       }
     },
+
     addItemToCart : (state, action) => {
       const id = action.payload
       // console.log(id)
@@ -70,10 +72,25 @@ export const shopSlice = createSlice({
       });
       if(checkCart(result, state.cartItems)){
         result.amount = 1;
-        state.cartItems.push(result)
-        state.numberOfItemsInCart = state.cartItems.length
+        state.cartItems.push(result);
+        // state.itemStatus = true;
+        state.numberOfItemsInCart = state.cartItems.length;
+        alert("Added item to your cart");
+      }else{
+        alert("Item already in your cart")
       }
+      
     },
+
+    removeItemFromCart : (state, action) => {
+      const id = action.payload
+      state.cartItems = state.cartItems.filter(item => {
+        return item.id != id
+      });
+      state.numberOfItemsInCart = state.cartItems.length;
+
+    },
+
     calculateTotal : (state) => {
       state.total = 0
       for (let i = 0; i < state.cartItems.length; i++) {
@@ -104,6 +121,6 @@ export const shopSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increaseAmount, decreaseAmount, filterItems, addItemToCart, calculateTotal } = shopSlice.actions
+export const { increaseAmount, decreaseAmount, filterItems, addItemToCart, calculateTotal, removeItemFromCart } = shopSlice.actions
 
 export default shopSlice.reducer
