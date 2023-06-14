@@ -19,7 +19,7 @@ const CartItems = ({ id, image, title, price, category, amount }) => {
                     <button onClick={()=>{
                         dispatch(removeItemFromCart(id))
                         dispatch(calculateTotal());
-                    }} className='transition-all ease-in-out delay-150 duration-300 bg-[#546b56] hover:bg-black px-8 rounded-md py-2 text-white font-bold'>Remove from cart</button>
+                    }} className='transition-all ease-in-out delay-150 duration-300 bg-[#546b56] hover:bg-red-600 px-8 rounded-md py-2 text-white font-bold'>Remove from cart</button>
                 </div>
             </div>
             <div className='flex flex-row items-center gap-3'>

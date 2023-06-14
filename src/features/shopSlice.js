@@ -91,6 +91,12 @@ export const shopSlice = createSlice({
 
     },
 
+    clearCart : (state) => {
+      alert("Thank you for buying")
+      state.cartItems = []
+      state.numberOfItemsInCart = state.cartItems.length;
+    },
+
     calculateTotal : (state) => {
       state.total = 0
       for (let i = 0; i < state.cartItems.length; i++) {
@@ -121,6 +127,6 @@ export const shopSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increaseAmount, decreaseAmount, filterItems, addItemToCart, calculateTotal, removeItemFromCart } = shopSlice.actions
+export const { increaseAmount, decreaseAmount, filterItems, addItemToCart, calculateTotal, removeItemFromCart, clearCart } = shopSlice.actions
 
 export default shopSlice.reducer

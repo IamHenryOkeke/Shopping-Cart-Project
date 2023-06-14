@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import CartItems from "../components/CartItems";
 import { useEffect } from "react";
-import { calculateTotal } from "../features/shopSlice";
+import { calculateTotal, clearCart } from "../features/shopSlice";
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
@@ -38,6 +39,12 @@ const Cart = () => {
           $ {total.toFixed(2)}
         </p>
       </div>
+      <Link to="/" className="flex justify-center gap-8 mt-5 text-xl lg:text-3xl">
+        <button onClick={() => {dispatch(clearCart())}} className='transition-all ease-in-out delay-150 duration-300 bg-[#546b56] hover:bg-green-600 px-8 rounded-md py-2 text-white font-bold'>
+          Buy now
+        </button>
+      </Link>
+      
     </motion.div>
   )
 }
