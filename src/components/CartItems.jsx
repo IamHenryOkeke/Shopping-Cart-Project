@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import {ReactComponent as ArrowUp} from "../assets/svg/ArrowUp.svg";
 import {ReactComponent as ArrowDown} from "../assets/svg/ArrowDown.svg";
-import { increaseAmount, decreaseAmount, calculateTotal } from "../features/shopSlice";
+import { increaseAmount, decreaseAmount, calculateTotal, removeItemFromCart } from "../features/shopSlice";
 
 
 const CartItems = ({ id, image, title, price, category, amount }) => {
@@ -16,6 +16,10 @@ const CartItems = ({ id, image, title, price, category, amount }) => {
                     <h1 className='font-bold lg:text-lg'>{title}</h1>
                     <p className='lg:text-lg'>Category: {category}</p>
                     <p className='lg:text-lg'>Price: ${price}</p>
+                    <button onClick={()=>{
+                        dispatch(removeItemFromCart(id))
+                        dispatch(calculateTotal());
+                    }} className='transition-all ease-in-out delay-150 duration-300 bg-[#546b56] hover:bg-black px-8 rounded-md py-2 text-white font-bold'>Remove from cart</button>
                 </div>
             </div>
             <div className='flex flex-row items-center gap-3'>
