@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import CartItems from "../components/CartItems";
 import { useEffect } from "react";
 import { calculateTotal } from "../features/shopSlice";
+import { motion } from 'framer-motion';
 
 
 const Cart = () => {
@@ -22,7 +23,7 @@ const Cart = () => {
     )
   }
   return (
-    <div className="mx-6 my-10 md:my-20 lg:mx-28">
+    <motion.div initial = {{x : 1000}} animate = {{x : 0}} className="mx-6 my-10 md:my-20 lg:mx-28">
       <h1 className='text-center font-bold text-2xl mb-5'>Your Cart</h1>
       <div className='grid gap-4 lg:px-48'>
             {cartItems.map(item => (
@@ -38,7 +39,7 @@ const Cart = () => {
           $ {total.toFixed(2)}
         </p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react'
 
 
@@ -7,7 +8,7 @@ const Contact = () => {
 
 
   return (
-    <div className='flex flex-col items-center mx-3'>
+    <motion.div initial = {{x : 1000}} animate = {{x : 0}} className='flex flex-col items-center mx-3'>
       <h1 className='text-2xl md:text-4xl mb-5'>Get in touch</h1>
       <p className='text-xl md:text-2xl mb-2'>My Socials</p>
       <div className='flex gap-5 mb-5'>
@@ -43,7 +44,7 @@ const Contact = () => {
           <button className='px-4 py-1 bg-slate-400 border rounded-md'>Click to Send an Email</button>
         </a>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getData } from '../features/shopSlice';
 import Filter from '../components/Filter';
-
+import { motion } from 'framer-motion';
 
 const Shop = () => {
-  const { shopItems, isLoading, error } = useSelector((state) => state.shop)
+  const { shopItems, isLoading, error, numberOfItemsInCart } = useSelector((state) => state.shop)
 
   const dispatch = useDispatch()
 
@@ -32,7 +32,7 @@ const Shop = () => {
   }
 
   return (
-    <main className="mx-6 my-10 md:my-16 md:mx-14 lg:mx-28">
+    <motion.main initial = {{x : 1000}} animate = {{x : 0}} className="mx-6 my-10 md:my-16 md:mx-14 lg:mx-28">
       { shopItems && <Filter/> }
 
       {
@@ -44,7 +44,7 @@ const Shop = () => {
           </div>
         ) 
       }
-    </main>
+    </motion.main>
   )
 }
 
