@@ -9,7 +9,7 @@ const CartItems = ({ id, image, title, price, category, amount }) => {
     const dispatch = useDispatch(); 
 
     return (
-        <div className='flex flex-col md:flex-row gap-5 justify-between items-center px-2 md:px-6 lg:px-12 py-2 lg:py-6 border-gray-200 border-2 rounded-md'>
+        <div className='flex flex-col md:flex-row gap-5 justify-between items-center px-2 md:px-6 lg:px-12 py-2 lg:py-6 border-gray-200 border-4 rounded-md'>
             <div className='flex gap-10 md:w-4/5 items-center'>
                 <img className = "h-14 md:h-20 lg:h-28" src={image} alt="" />
                 <div>
