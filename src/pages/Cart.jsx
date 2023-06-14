@@ -16,13 +16,13 @@ const Cart = () => {
 
   if(numberOfItemsInCart < 1) {
     return (
-      <div className="mx-6 md:mx-14 lg:mx-28">
+      <div className="mx-6 my-10 md:my-20 md:mx-14 lg:mx-28">
         <h1 className='text-center font-bold text-2xl'>Your cart is empty</h1>
       </div>
     )
   }
   return (
-    <div className="mx-6 lg:mx-28">
+    <div className="mx-6 my-10 md:my-20 lg:mx-28">
       <h1 className='text-center font-bold text-2xl mb-5'>Your Cart</h1>
       <div className='grid gap-4 lg:px-48'>
             {cartItems.map(item => (

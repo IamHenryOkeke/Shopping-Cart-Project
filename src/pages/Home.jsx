@@ -3,7 +3,7 @@ import HeroImage from "../assets/images/HeroImage.jpg"
 
 const Home = () => {
   return (
-    <div className="mx-3 mb-6 lg:mx-28 flex flex-col-reverse md:flex-row gap-7 justify-between items-center">
+    <div className="mx-3 my-10 md:my-20 lg:mx-28 flex flex-col-reverse md:flex-row gap-7 justify-between items-center">
       <div className = "text-center">
         <h1 className = "text-3xl lg:text-6xl font-bold mb-5">Welcome to The Market Place</h1>
         <p className = "text-xl lg:text-4xl mb-5">Your one stop for everything you need</p>

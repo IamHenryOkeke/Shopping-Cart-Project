@@ -16,13 +16,13 @@ const Shop = () => {
 
   if(isLoading) {
     return (
-      <p className='text-center'>Loading....</p>
+      <p className='text-center my-10 md:my-16'>Loading....</p>
     )
   }
 
   if(error) {
     return (
-      <div className='flex flex-col gap-5'>
+      <div className='flex flex-col gap-5 my-10 md:my-20'>
           <p className='text-center'>{error}</p>
           <button onClick={() => {
             dispatch(getData());
@@ -32,7 +32,7 @@ const Shop = () => {
   }
 
   return (
-    <main className="mx-6 md:mx-14 lg:mx-28">
+    <main className="mx-6 my-10 md:my-16 md:mx-14 lg:mx-28">
       { shopItems && <Filter/> }
 
       {
