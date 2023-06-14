@@ -33,12 +33,12 @@ const Contact = () => {
           type="text"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
-          className='border-2 border-black rounded-md p-2 w-full'
+          className='border-2 border-black rounded-md p-2 w-full lg:w-[60%]'
         />
 
         <label>Your message</label>
         <textarea rows="5" value={message}
-          onChange={(e) => setMessage(e.target.value)} className="p-2 border-2 border-black text-gray-900 bg-gray-50 resize-none rounded-md w-full" placeholder="Write your message here..."></textarea>
+          onChange={(e) => setMessage(e.target.value)} className="p-2 border-2 border-black text-gray-900 bg-gray-50 resize-none rounded-md w-full lg:w-[60%]" placeholder="Write your message here..."></textarea>
         <a href={`mailto:iamhenryokeke@gmail.com?subject=${subject}&body=${message}`}>
           <button className='px-4 py-1 bg-slate-400 border rounded-md'>Click to Send an Email</button>
         </a>
