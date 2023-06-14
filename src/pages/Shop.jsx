@@ -26,7 +26,7 @@ const Shop = () => {
           <p className='text-center'>{error}</p>
           <button onClick={() => {
             dispatch(getData());
-          }} className='transition-all self-center ease-in-out delay-150 duration-300 bg-[#546b56] hover:bg-black px-8 rounded-md py-2 text-white font-bold'>Add to cart</button>
+          }} className='transition-all self-center ease-in-out delay-150 duration-300 bg-[#546b56] hover:bg-black px-8 rounded-md py-2 text-white font-bold'>Refresh</button>
       </div> 
     )
   }
