@@ -6,7 +6,7 @@ import Filter from '../components/Filter';
 import { motion } from 'framer-motion';
 
 const Shop = () => {
-  const { shopItems, isLoading, error, numberOfItemsInCart } = useSelector((state) => state.shop)
+  const { shopItems, isLoading, error } = useSelector((state) => state.shop)
 
   const dispatch = useDispatch()
 
